@@ -49,11 +49,29 @@ cmake_ninja_workdir = /home/m4x/CLionProjects/VL05/cmake-build-debug/
 
 build cmake_object_order_depends_target_VL05: phony || CMakeFiles/VL05.dir
 
-build CMakeFiles/VL05.dir/1/main.cpp.o: CXX_COMPILER__VL05_Debug /home/m4x/CLionProjects/VL05/1/main.cpp || cmake_object_order_depends_target_VL05
-  DEP_FILE = CMakeFiles/VL05.dir/1/main.cpp.o.d
+build CMakeFiles/VL05.dir/02/bucket_sort.cpp.o: CXX_COMPILER__VL05_Debug /home/m4x/CLionProjects/VL05/02/bucket_sort.cpp || cmake_object_order_depends_target_VL05
+  DEP_FILE = CMakeFiles/VL05.dir/02/bucket_sort.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
   OBJECT_DIR = CMakeFiles/VL05.dir
-  OBJECT_FILE_DIR = CMakeFiles/VL05.dir/1
+  OBJECT_FILE_DIR = CMakeFiles/VL05.dir/02
+
+build CMakeFiles/VL05.dir/03/sort_16_int.cpp.o: CXX_COMPILER__VL05_Debug /home/m4x/CLionProjects/VL05/03/sort_16_int.cpp || cmake_object_order_depends_target_VL05
+  DEP_FILE = CMakeFiles/VL05.dir/03/sort_16_int.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  OBJECT_DIR = CMakeFiles/VL05.dir
+  OBJECT_FILE_DIR = CMakeFiles/VL05.dir/03
+
+build CMakeFiles/VL05.dir/04/my_hash.cpp.o: CXX_COMPILER__VL05_Debug /home/m4x/CLionProjects/VL05/04/my_hash.cpp || cmake_object_order_depends_target_VL05
+  DEP_FILE = CMakeFiles/VL05.dir/04/my_hash.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  OBJECT_DIR = CMakeFiles/VL05.dir
+  OBJECT_FILE_DIR = CMakeFiles/VL05.dir/04
+
+build CMakeFiles/VL05.dir/main.cpp.o: CXX_COMPILER__VL05_Debug /home/m4x/CLionProjects/VL05/main.cpp || cmake_object_order_depends_target_VL05
+  DEP_FILE = CMakeFiles/VL05.dir/main.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  OBJECT_DIR = CMakeFiles/VL05.dir
+  OBJECT_FILE_DIR = CMakeFiles/VL05.dir
 
 
 # =============================================================================
@@ -63,7 +81,7 @@ build CMakeFiles/VL05.dir/1/main.cpp.o: CXX_COMPILER__VL05_Debug /home/m4x/CLion
 #############################################
 # Link the executable VL05
 
-build VL05: CXX_EXECUTABLE_LINKER__VL05_Debug CMakeFiles/VL05.dir/1/main.cpp.o
+build VL05: CXX_EXECUTABLE_LINKER__VL05_Debug CMakeFiles/VL05.dir/02/bucket_sort.cpp.o CMakeFiles/VL05.dir/03/sort_16_int.cpp.o CMakeFiles/VL05.dir/04/my_hash.cpp.o CMakeFiles/VL05.dir/main.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/VL05.dir
   POST_BUILD = :
