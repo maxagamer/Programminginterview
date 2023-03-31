@@ -1,0 +1,4 @@
+/home/m4x/clion-2022.3.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/m4x/clion-2022.3.2/bin/ninja/linux/x64/ninja -G Ninja -S /home/m4x/CLionProjects/VL12 -B /home/m4x/CLionProjects/VL12/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/m4x/CLionProjects/VL12/cmake-build-debug
