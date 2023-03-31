@@ -71,7 +71,6 @@ void testSolution(const vector<int> &a,const int p[],const int q[],const int n){
     }
 }
 
-
 /**
  *
  * @param a     is the vector with the given parameters
@@ -83,7 +82,7 @@ void testSolution(const vector<int> &a,const int p[],const int q[],const int n){
  *              filtering every impossible case out and
  *              backtracking the possible solution
  */
-void calculate(vector<int> &a, int p[], int q[], int n){
+void calculate_old(vector<int> &a, int p[], int q[], int n){
 
     // to find every index in O(1)
     unordered_map<int, int> find_indicies;
@@ -170,6 +169,130 @@ void calculate(vector<int> &a, int p[], int q[], int n){
             indexOfP[i] = 1;
             accesssedElementsQ.push(tmpValue);
             accesssedElementsP.push(i);
+            count++;
+
+        }
+
+
+        // ----------------------------------Print---------------------------------- \\
+
+        cout << "\n";
+        for(int ia : a){
+            cout << ia + 1  << " ";
+        }
+        cout << "\n";
+        for(int i = 0; i < n; i++){
+            cout << p[i] + 1 << " ";
+        }
+        cout << "\n";
+        for(int i = 0; i < n; i++){
+            cout << q[i] + 1 << " ";
+        }
+
+        // ----------------------------------End---------------------------------- \\
+
+
+    }
+
+}
+
+
+
+/**
+ *
+ * @param a     is the vector with the given parameters
+ * @param p     array p given by the problem
+ * @param q     array q given by the problem
+ * @param n     the size of a
+ *
+ *              This function calculates the solution by
+ *              filtering every impossible case out and
+ *              backtracking the possible solution
+ */
+void calculate(vector<int> &a, int p[], int q[], int n){
+
+    // to find every index in O(1)
+    unordered_map<int, int> find_indicies;
+    for(int i = 0; i < a.size(); i++){
+        find_indicies[a.at(i)] = i;
+    }
+
+    // this it to store every number in b
+    // since bitset needs to know how big
+    // it is while compiling I had to use
+    // the biggest n possible (it is about 13KB,
+    // if it really just stores single bit's)
+    bitset<10000> indexOfP;
+    bitset<10000> indexOfQ;
+
+    // these stacks are used to backtrack what was done
+    // and in case to roll back
+    int last;
+    
+
+    // this variable is used to store at which point we are
+    int count = 1;
+
+    // first iteration
+    if(a.at(0) == 0){
+        q[0]                        = 1;
+        p[1]                        = 0;
+        indexOfQ[0]                 = 1;
+        indexOfP[1]                 = 1;
+        last = 1;
+        
+    }
+    else {
+        int tmpValue = a.at(0);
+        if(tmpValue == 1){
+            q[tmpValue]             = tmpValue + 1;
+            p[tmpValue + 1]         = 0;
+            indexOfQ[tmpValue]      = 1;
+            indexOfP[tmpValue + 1]  = 1;
+            last = tmpValue + 1;
+        }
+        else {
+            q[tmpValue]             = 1;
+            p[1]                    = 0;
+            indexOfQ[tmpValue]      = 1;
+            indexOfP[1]             = 1;
+            last = 1;
+        }
+    }
+
+    // ----------------------------------Print---------------------------------- \\
+
+    count++;
+
+    {
+        while(count <= n) {
+            // we continue on the last used element which could be:
+            // if it was 0 we continue at 1
+            // if it was 1 we contonue at 2
+            // if it was something else we continue at 0
+            int tmpValue = last;
+            int tmpIndex = find_indicies[last];
+            int i;
+
+            if(!indexOfQ[tmpValue]) {
+                for (i = 0; i < n; i++) {
+                    if (i != tmpIndex && i != tmpValue) {
+                        if (!indexOfP[i]) break;
+                    }
+                }
+            }else{
+                for(i = 0; i < n; i++){
+                    if(!indexOfP[i]) break;
+                }
+                tmpValue = i;
+                tmpIndex = find_indicies[i];
+            }
+
+            q[tmpValue] = i;
+            p[i] = tmpIndex;
+            indexOfQ[tmpValue] = 1;
+            indexOfP[i] = 1;
+            last = i;
             count++;
 
         }
@@ -290,6 +413,7 @@ void mainManager(vector<vector<int>> &a){
 int main() {
 
     // Test Case Codeforces
+    
     {
         vector<vector<int>> input;
         input.push_back({2, 1});
@@ -305,6 +429,7 @@ int main() {
         input.push_back({9, 8, 12, 4, 2, 10, 3, 1, 5, 6, 13, 11, 7});
         mainManager(input);
     }
+
 
 
     return 0;
