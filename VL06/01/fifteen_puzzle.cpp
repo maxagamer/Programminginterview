@@ -338,7 +338,7 @@ void backtrack(Game &game, unordered_set<bitset<128>> &visited_game_states,
 
 /*************** end assignment ***************/
 
-int definetly_main_01() {
+int main() {
     {
         // let's test your solution with a simple example first
         array<uint8_t, 16> example{2, 3, 4,  0,  1,  5,  7,  8,

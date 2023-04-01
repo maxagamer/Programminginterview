@@ -49,8 +49,14 @@ cmake_ninja_workdir = /home/m4x/CLionProjects/VL10/cmake-build-debug/
 
 build cmake_object_order_depends_target_VL10: phony || CMakeFiles/VL10.dir
 
-build CMakeFiles/VL10.dir/main.cpp.o: CXX_COMPILER__VL10_Debug /home/m4x/CLionProjects/VL10/main.cpp || cmake_object_order_depends_target_VL10
-  DEP_FILE = CMakeFiles/VL10.dir/main.cpp.o.d
+build CMakeFiles/VL10.dir/threeNplusOn.cpp.o: CXX_COMPILER__VL10_Debug /home/m4x/CLionProjects/VL10/threeNplusOn.cpp || cmake_object_order_depends_target_VL10
+  DEP_FILE = CMakeFiles/VL10.dir/threeNplusOn.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  OBJECT_DIR = CMakeFiles/VL10.dir
+  OBJECT_FILE_DIR = CMakeFiles/VL10.dir
+
+build CMakeFiles/VL10.dir/graphConnectivity.cpp.o: CXX_COMPILER__VL10_Debug /home/m4x/CLionProjects/VL10/graphConnectivity.cpp || cmake_object_order_depends_target_VL10
+  DEP_FILE = CMakeFiles/VL10.dir/graphConnectivity.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++17
   OBJECT_DIR = CMakeFiles/VL10.dir
   OBJECT_FILE_DIR = CMakeFiles/VL10.dir
@@ -63,7 +69,7 @@ build CMakeFiles/VL10.dir/main.cpp.o: CXX_COMPILER__VL10_Debug /home/m4x/CLionPr
 #############################################
 # Link the executable VL10
 
-build VL10: CXX_EXECUTABLE_LINKER__VL10_Debug CMakeFiles/VL10.dir/main.cpp.o
+build VL10: CXX_EXECUTABLE_LINKER__VL10_Debug CMakeFiles/VL10.dir/threeNplusOn.cpp.o CMakeFiles/VL10.dir/graphConnectivity.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/VL10.dir
   POST_BUILD = :
