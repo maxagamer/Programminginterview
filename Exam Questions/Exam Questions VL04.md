@@ -1,5 +1,3 @@
-## Exam Questions VL04
-
 ##### How to delete a (non-tail) node from a singly linked list without knowing its predecessor in O(1) time?
 
 We just copy the data from the successor Data into the node that has to be deleted. We then point to the next node of the successor and after this we delete the successor.

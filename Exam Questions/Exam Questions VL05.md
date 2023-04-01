@@ -1,5 +1,3 @@
-## Exam Questions VL05
-
 ##### Describe briefly the heap data structure.
 
 A heap is a priority queue rigid structure which means it has a shape that is very consistant. This shape is that there will be no node in depth x when there is at least one space in depth x - 1. Every child of every node is also smaller as their parent counter part. 

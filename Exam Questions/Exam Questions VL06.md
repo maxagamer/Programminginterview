@@ -1,5 +1,3 @@
-## Exam Questions VL06
-
 ##### What is backtracking?
 
 Backtracking is kinda like brute force, the difference is that when you're backtracking your solutions and if you find one that won't succeed you reject it. It is basically a trimmed version of brute force.

@@ -1,5 +1,3 @@
-## Exam Questions VL03
-
 ##### Outline an algorithm to convert a string to an unsigned integer (no negative numbers).
 
 ```

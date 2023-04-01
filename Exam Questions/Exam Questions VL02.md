@@ -1,8 +1,6 @@
-## Exam Questions VL02
-
 ##### How can we exploit bit operations for operations with sets?
 
-If we use bit operations we basically cast the datatype (whatever it is) to just some bits that we can easily compare without even care about the datatype we're looking at.
+If we use bit operations we can cast the datatype (whatever it is) to just some bits that we can easily manipulate without caring about the datatype we're looking at.
 
 ---
 

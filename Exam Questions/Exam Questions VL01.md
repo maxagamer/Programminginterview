@@ -1,6 +1,4 @@
 
-## Exam Questions VL01
-
 ##### What is the time complexity of the following code(big_O_examples.cpp)?
 
 The time Complexity of "foo" in "big_O_examples.cpp" is 2n where n is the size of the vectro "vec".
@@ -17,28 +15,28 @@ return a+b;
 }
 ```
 
-Just adds two integers and returns them. 
+Just add two integers and return them. 
 
 #### $O(log~n)$:
 
 ```
 struct node* search(struct node* root, int key){
 
-// Base Cases: root is null or key is 
-// present at root`
+    // Base Cases: root is null or key is 
+    // present at root`
 
-if (root == NULL || root->key == key)
+    if (root == NULL || root->key == key)
 
-   return root;
+       return root;
 
-// Key is greater than root's key
+    // Key is greater than root's key
 
-if (root->key < key)
-return search(root->right, key)
+    if (root->key < key)
+	return search(root->right, key)
 
-// Key is smaller than root's key
+    // Key is smaller than root's key
 
-return search(root->left, key);
+    return search(root->left, key);
 
 }
 ```
@@ -50,11 +48,11 @@ In a Binary-Tree the height of the tree is $log~n$ therefore if you search for a
 
 ```
 int retSmallest(const vector<int> &vec){
-int min = INT_MAX;
-for(int i: vec){
-	if(min > i) min = i;
-}
-return min;
+	int min = INT_MAX;
+	for(int i: vec){
+		if(min > i) min = i;
+	}
+	return min;
 }
 ```
 
@@ -63,57 +61,57 @@ This function loops through every Element inside "vec". Therefore it has a runti
 #### $O(n~log~n)$
 ```
 struct Node {
-int data;
-Node* left;
-Node* right;
+    int data;
+    Node* left;
+    Node* right;
 };
 
 Node* CreateNode(int data)
 {
-Node* newNode = new Node();
-if (!newNode) {
-	cout << "Memory error\n";
-	return NULL;
-}
-newNode->data = data;
-newNode->left = newNode->right = NULL;
-return newNode;
+    Node* newNode = new Node();
+    if (!newNode) {
+        cout << "Memory error\n";
+        return NULL;
+    }
+    newNode->data = data;
+    newNode->left = newNode->right = NULL;
+    return newNode;
 }
 
 Node* InsertNode(Node* root, int data)
 {
-// If the tree is empty, assign new node address to root
-if (root == NULL) {
-	root = CreateNode(data);
-	return root;
-}
-
-// Else, do level order traversal until we
-// find an empty
-// place, i.e. either left child or right 
-// child of some
-// node is pointing to NULL.
-queue<Node*> q;
-q.push(root);
-
-while (!q.empty()) {
-	Node* temp = q.front();
-	q.pop();
-
-	if (temp->left != NULL)
-		q.push(temp->left);
-	else {
-		temp->left = CreateNode(data);
-		return root;
-	}
-
-	if (temp->right != NULL)
-		q.push(temp->right);
-	else {
-		temp->right = CreateNode(data);
-		return root;
-	}
-}
+    // If the tree is empty, assign new node address to root
+    if (root == NULL) {
+        root = CreateNode(data);
+        return root;
+    }
+ 
+    // Else, do level order traversal until we
+	// find an empty
+    // place, i.e. either left child or right 
+    // child of some
+    // node is pointing to NULL.
+    queue<Node*> q;
+    q.push(root);
+ 
+    while (!q.empty()) {
+        Node* temp = q.front();
+        q.pop();
+ 
+        if (temp->left != NULL)
+            q.push(temp->left);
+        else {
+            temp->left = CreateNode(data);
+            return root;
+        }
+ 
+        if (temp->right != NULL)
+            q.push(temp->right);
+        else {
+            temp->right = CreateNode(data);
+            return root;
+        }
+    }
 }
 
 
@@ -126,11 +124,11 @@ If you create and insert every Element of an Array it has to traverse through th
 
 ```
 void printDoubles(const vector<int> &vec){
-for(int a = 0; a < vec.size(); a++){
-	for(int b = 0; b < vec.size(); b++){
-		if(a!=b && vec) cout << vec.at(b);
+	for(int a = 0; a < vec.size(); a++){
+		for(int b = 0; b < vec.size(); b++){
+			if(a!=b && vec) cout << vec.at(b);
+		}
 	}
-}
 }
 ```
 

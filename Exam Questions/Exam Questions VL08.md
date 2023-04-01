@@ -1,5 +1,3 @@
-## Exam Questions VL08
-
 ##### If you need to find the shortest path between two nodes in a graph where all edges have length 1, which algorithm would you use and why?
 
 I would use Dijkstra to solve this, because it is an simple task and everything else would be overkill.

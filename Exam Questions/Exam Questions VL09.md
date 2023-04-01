@@ -1,5 +1,3 @@
-## Exam Questions VL09
-
 ##### Argue why topological sortings only exist for acyclic graphs.
 
 Well if there is a cycle inside the directed Graph and you somehow reach the cycle(which has to happen sometime). You will enter the cycle and look for and end. You will be a dog chasing his own tail, as there is no end to it and you're stuck in the loop without ever leaving it.
